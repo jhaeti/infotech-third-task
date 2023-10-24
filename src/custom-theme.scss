@@ -14,26 +14,26 @@
 
 /* For use in src/lib/core/theming/_palette.scss */
 $md-test: (
-  50: #e0f0f0,
-  100: #b3d9d9,
-  200: #80c0c0,
-  300: #4da6a6,
-  400: #269393,
-  500: #008080,
-  600: #007878,
-  700: #006d6d,
-  800: #006363,
-  900: #005050,
-  A100: #83ffff,
-  A200: #50ffff,
-  A400: #1dffff,
-  A700: #03ffff,
+  50: #e5f1f4,
+  100: #bedde4,
+  200: #92c6d2,
+  300: #66afbf,
+  400: #469db2,
+  500: #258ca4,
+  600: #21849c,
+  700: #1b7992,
+  800: #166f89,
+  900: #0d5c78,
+  A100: #aae6ff,
+  A200: #77d8ff,
+  A400: #44c9ff,
+  A700: #2ac1ff,
   contrast: (
     50: #000000,
     100: #000000,
     200: #000000,
     300: #000000,
-    400: #ffffff,
+    400: #000000,
     500: #ffffff,
     600: #ffffff,
     700: #ffffff,
@@ -46,13 +46,41 @@ $md-test: (
   ),
 );
 
-$infotech-third-task-primary: mat.define-palette($md-test);
-$infotech-third-task-accent: mat.define-palette(
-  mat.$pink-palette,
-  A200,
-  A100,
-  A400
+$md-testaccent: (
+  50: #fcf4e9,
+  100: #f7e3c7,
+  200: #f2d0a2,
+  300: #edbd7c,
+  400: #e9ae60,
+  500: #e5a044,
+  600: #e2983e,
+  700: #de8e35,
+  800: #da842d,
+  900: #d3731f,
+  A100: #ffffff,
+  A200: #ffe9d7,
+  A400: #ffcca4,
+  A700: #ffbe8b,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
 );
+
+$infotech-third-task-primary: mat.define-palette($md-test);
+$infotech-third-task-accent: mat.define-palette($md-testaccent);
 
 // The warn palette is optional (defaults to red).
 $infotech-third-task-warn: mat.define-palette(mat.$red-palette);

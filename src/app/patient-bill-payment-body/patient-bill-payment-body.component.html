@@ -1,0 +1,343 @@
+<div class="container">
+  <div class="content">
+    <div class="head">
+      <h3>Patient Bill Payment</h3>
+      <div>
+        <div class="example-button-container">
+          <button
+            class="btn-shadow"
+            mat-mini-fab
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>pause</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            class="btn-shadow"
+            mat-mini-fab
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>people</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>description</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="example-button-container">
+          <button
+            class="bg-dark-grey"
+            mat-mini-fab
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="accent"
+            aria-label="Example icon button with a home icon"
+            (click)="saveForm()"
+          >
+            <mat-icon>done</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="accent"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            class="btn-shadow"
+            mat-mini-fab
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>library_books</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            class="btn-shadow"
+            mat-mini-fab
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>info</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>list</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            class="btn-shadow"
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>print</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="warn"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div *ngIf="saveLoading">
+        <mat-progress-bar
+          style="margin-top: 2rem"
+          *ngIf="!saved"
+          mode="indeterminate"
+        ></mat-progress-bar>
+        <p
+          style="
+            background-color: rgba(153, 202, 153, 0.829);
+            color: rgb(14, 99, 14);
+            padding: 1rem;
+            font-size: 2rem;
+            border-radius: 0.3rem;
+            max-width: 40rem;
+          "
+          *ngIf="saved"
+        >
+          Payment Successful
+        </p>
+      </div>
+
+      <div>
+        <p class="title">Bill Payment</p>
+      </div>
+
+      <form
+        class="form"
+        [ngClass]="disableBillPaymentForm ? 'disable' : ''"
+        [formGroup]="billPaymentForm"
+      >
+        <mat-form-field class="example-full-width">
+          <mat-label>Client ID</mat-label>
+          <input formControlName="clientId" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Services Outstanding Bill</mat-label>
+          <input formControlName="serviceOutStandingBill" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Drugs Outstanding Bill</mat-label>
+          <input formControlName="drugsOutstandingBill" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total Outstanding Bill</mat-label>
+          <input formControlName="totalOutstandingBill" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Services Current Bill</mat-label>
+          <input formControlName="servicesCurrentBill" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Drugs Current Bill</mat-label>
+          <input formControlName="drugsCurrentBill" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total Current Bill</mat-label>
+          <input formControlName="totalCurrentBill" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total Deposit</mat-label>
+          <input formControlName="totalDeposit" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total Discount</mat-label>
+          <input formControlName="totalDiscount" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total IOU</mat-label>
+          <input formControlName="totalIOU" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Grand Total</mat-label>
+          <input formControlName="grandTotal" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total Bill</mat-label>
+          <input formControlName="totalBill" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Payment Mode</mat-label>
+          <mat-select formControlName="paymentMode" matInput>
+            <mat-option
+              value="{{ mtd.id }}"
+              *ngFor="let mtd of paymentMethods"
+              >{{ mtd.name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Currency</mat-label>
+          <mat-select formControlName="currency" matInput>
+            <mat-option
+              value="{{ currency.id }}"
+              *ngFor="let currency of currencies"
+              >{{ currency.name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Amount Tendered</mat-label>
+          <input formControlName="amountTendered" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Cash</mat-label>
+          <input formControlName="cash" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Change Amount</mat-label>
+          <input formControlName="changeAmount" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Cheque#</mat-label>
+          <input formControlName="cheque" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Transaction ID#</mat-label>
+          <input formControlName="transactionId" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Bank#</mat-label>
+          <mat-select formControlName="bank" matInput>
+            <mat-option value="{{ bank.id }}" *ngFor="let bank of banks">{{
+              bank.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="block">
+      <div>
+        <p class="title">Mobile Money Payment</p>
+      </div>
+      <form class="form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Network</mat-label>
+          <mat-select matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Wallet</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Amount</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Token</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="block">
+      <form class="form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Payment Date</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Transaction ID</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Remarks</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="card">
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title
+              ><div>
+                <p class="title">Services Pending Payment</p>
+              </div></mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <div class="filters">
+            <app-custom-input
+              label="Search"
+              textId="another"
+              icon="search"
+            ></app-custom-input>
+            <mat-paginator
+              appearance="fill"
+              #paginator
+              class="demo-paginator"
+              (page)="handlePageEvent($event)"
+              [length]="length"
+              [pageSize]="pageSize"
+              [disabled]="disabled"
+              [showFirstLastButtons]="showFirstLastButtons"
+              [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+              [hidePageSize]="hidePageSize"
+              [pageIndex]="pageIndex"
+              aria-label="Select page"
+            >
+            </mat-paginator>
+          </div>
+          <app-table></app-table>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+  <app-right-card></app-right-card>
+</div>

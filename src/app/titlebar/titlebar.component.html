@@ -1,16 +1,11 @@
 <div class="titlebar grey">
-  <button
-    mat-button
-    class="btn grey"
-    aria-label="Example icon button with a menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <div>
-    GODFRED DOKU, SYSTEM DEVELOPER - <span>Mon, Oct 9, 2023 11:05 AM </span>
+  <div style="width: 10rem"></div>
+  <div class="greeting">
+    <span>GODFRED DOKU, SYSTEM DEVELOPER - </span
+    ><span>Mon, Oct 9, 2023 11:05 AM </span>
   </div>
   <div class="bg-teal">
-    <button mat-button style="flex-direction: row-reverse">
+    <button class="bg" mat-button style="flex-direction: row-reverse">
       <div>SAM JONAH HOSPITAL</div>
       <mat-icon
         class="dark"
@@ -19,6 +14,15 @@
         fontIcon="keyboard_arrow_down"
       ></mat-icon>
     </button>
+    <button class="sm" mat-icon-button>
+      <mat-icon
+        style="color: #444 !important"
+        aria-hidden="false"
+        aria-label="Arrow down Icon"
+        fontIcon="keyboard_arrow_down"
+      ></mat-icon>
+    </button>
+
     <button mat-icon-button>
       <mat-icon
         aria-hidden="false"
@@ -58,10 +62,10 @@
         matBadgePosition="before"
       ></mat-icon>
     </button>
-    <button mat-button>
+    <button mat-icon-button>
       <mat-icon
         aria-hidden="false"
-        aria-label="Show Chart Icon"
+        aria-label="Icon"
         fontIcon="account_circle"
       ></mat-icon>
     </button>

@@ -1,0 +1,136 @@
+<div class="bg-teal">
+  <a
+    class="{{ showLabel ? 'show' : '' }}"
+    (click)="toggleShow()"
+    style="
+      border-right: 1px solid #555;
+      border-bottom: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    "
+    class="grey"
+    ><img
+      style="height: 3.6rem; margin-left: 0.5rem"
+      *ngIf="showLabel"
+      src="../../assets/HIMS-Approved-Logo-scaled-removebg-preview.png"
+      alt=""
+    />
+    <a mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </a>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Home</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>receipt</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Appointment</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>folder_open</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Pharmacy</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>event</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Daily Services</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>work</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Inventory and Stores</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>paid_bill</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Billing and Payments</span>
+  </a>
+  <a (click)="setFalse()" class="active" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>local_atm</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Billing and Payments - DS</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>biotech</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Laboratory Management</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon>medication</mat-icon>
+    </a>
+    <span *ngIf="showLabel">Consultation</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon fontIcon="face"></mat-icon>
+    </a>
+    <span *ngIf="showLabel">Nurses Station</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon fontIcon="receipt"></mat-icon>
+    </a>
+    <span *ngIf="showLabel">Procedure & Anesthesia MGT</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon fontIcon="store"></mat-icon>
+    </a>
+    <span *ngIf="showLabel">Claims Management</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon fontIcon="summarize"></mat-icon>
+    </a>
+    <span *ngIf="showLabel">Reports</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon fontIcon="events"></mat-icon>
+    </a>
+    <span *ngIf="showLabel">Patient Documents</span>
+  </a>
+  <a (click)="setFalse()" class="{{ showLabel ? 'show' : '' }}">
+    <a mat-icon-button>
+      <mat-icon fontIcon="settings"></mat-icon>
+    </a>
+    <span *ngIf="showLabel">Setups</span>
+  </a>
+
+  <!-- 
+  <a mat-button>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Event Icon"
+      fontIcon="medical_services"
+    ></mat-icon>
+  </a>
+  <a mat-button>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Show Chart Icon"
+      fontIcon="insert_drive_file"
+    ></mat-icon>
+  </a>
+  <a mat-button>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Show Chart Icon"
+      fontIcon="settings"
+    ></mat-icon>
+  </a> -->
+</div>

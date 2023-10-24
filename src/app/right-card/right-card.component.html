@@ -1,0 +1,75 @@
+<mat-card class="patient-lists" [ngClass]="show ? 'show' : ''">
+  <p class="title">Patient Lists</p>
+  <div style="display: flex; gap: 0.1rem">
+    <mat-form-field class="example-full-width">
+      <mat-label>Patient List</mat-label>
+      <mat-select matInput />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>List Status</mat-label>
+      <mat-select matInput />
+    </mat-form-field>
+  </div>
+  <div style="width: 15rem">
+    <app-custom-input
+      label="Search"
+      textId="something"
+      icon="search"
+    ></app-custom-input>
+  </div>
+
+  <table>
+    <tr style="background: #ccc; position: sticky; top: 0; z-index: 5">
+      <th style="text-align: left; padding: 1rem 1rem">Queue</th>
+    </tr>
+    <tr *ngFor="let element of queue">
+      <div class="user-card">
+        <div class="top">
+          <div class="left">
+            <img src="../../assets/userprofile.png" />
+          </div>
+          <div class="right">
+            <h3>{{ element.name }}</h3>
+            <h5>{{ element.username }}</h5>
+            <p class="email">{{ element.email }}</p>
+            <p class="email">{{ element.number }}</p>
+            <p>{{ element.companyName }}</p>
+            <div class="bottom">
+              <button
+                style="background: var(--teal); color: white"
+                mat-button
+                extended
+                (click)="start(element)"
+                [disabled]="
+                  !disablePaymentForm &&
+                  element.id !== selectedUserForPayment.id
+                "
+              >
+                <mat-icon style="transform: scale(2); margin-right: 1rem"
+                  >account_circle</mat-icon
+                >
+                Start
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </tr>
+  </table>
+</mat-card>
+<button
+  class="toggleBtn"
+  (click)="show = !show"
+  style="
+    background: rgba(0, 0, 0, 0.6) !important;
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+  "
+  mat-icon-button
+  aria-label="Example icon button with a menu icon"
+>
+  <mat-icon>menu</mat-icon>
+</button>

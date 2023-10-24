@@ -1,15 +1,26 @@
 .btn {
-  color: #fff !important;
   border: 1px solid #888;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn img {
+  height: 3.2rem;
+  margin-left: 0.5rem;
 }
 
 .titlebar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 2.5rem;
+  height: 40px;
   overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .bg-teal {
@@ -22,12 +33,45 @@
   border-radius: 0;
 }
 
-.bg-teal button:last-child {
-  transform: translateX(4px) scale(1.2);
-  /* width: 4rem; */
-}
-
 .badge {
   position: absolute;
   top: 0;
+}
+
+.sm {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .greeting > span:nth-child(1) {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .greeting {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .btn {
+    border: none;
+  }
+}
+@media (max-width: 800px) {
+  .sm {
+    display: block;
+  }
+  .bg {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5) {
+  .btn {
+    border: none;
+  }
+  .greeting {
+    display: none;
+  }
 }

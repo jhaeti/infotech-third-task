@@ -1,0 +1,174 @@
+.container {
+  height: calc(100vh - 40px - 2rem);
+  margin-left: 48px;
+  width: calc(100% - 48px - 2rem);
+  padding: 1rem;
+  position: relative;
+  background-color: #f5f5f5;
+
+  display: flex;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+
+.content {
+  width: calc(100% - 33.5rem);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.head h3 {
+  color: var(--teal);
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.head > div {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.block .form {
+  padding: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.block p.title {
+  display: inline-block;
+  padding: 0 0.8rem;
+  background: #f5f5f5;
+  transform: translate(1.6rem, 3.2rem);
+  margin-top: -2.4rem;
+}
+
+p.title {
+  color: rgb(219, 106, 13);
+  font-size: 1.8rem;
+}
+
+.block .form mat-form-field {
+  margin: 0 1rem;
+  flex-grow: 1;
+  max-width: 25rem;
+  width: calc((100% / 6) - 1rem);
+}
+
+mat-card {
+  padding: 1.6rem;
+  margin: 1.6rem 0;
+}
+
+.card {
+  margin: 3.52rem 0;
+  padding-bottom: 3rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 1400px) {
+  .block .form mat-form-field {
+    width: calc((100% / 7)- 1rem);
+    max-width: 33rem;
+  }
+}
+
+@media (max-width: 1399px) {
+  .block .form mat-form-field {
+    width: calc((100% / 6) - 1rem);
+    max-width: 33rem;
+  }
+}
+@media (max-width: 1200px) {
+  .block .form mat-form-field {
+    width: calc((100% / 5));
+    max-width: 33rem;
+  }
+}
+@media (max-width: 1100px) {
+  .container {
+    gap: 0;
+  }
+  .container > div {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .head h3 {
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  span {
+    font-size: 1.4rem;
+  }
+
+  .block .form mat-form-field {
+    width: calc((100% / 4) - 1rem);
+  }
+}
+@media (max-width: 800px) {
+}
+@media (max-width: 650px) {
+  .head > div {
+    gap: 0;
+    margin-top: -1.5rem;
+  }
+  .head > div > div {
+    transform: scale(0.7);
+    margin-right: -1.2rem;
+  }
+  .block .form mat-form-field {
+    width: calc((100% / 3));
+  }
+}
+@media (max-width: 600px) {
+  /* .block .form mat-form-field {
+    width: calc((100% / 2) - 0.4rem);
+  } */
+  .filters {
+    flex-direction: column;
+  }
+}
+@media (max-width: 450px) {
+  .block .form mat-form-field {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5) {
+  .container {
+    gap: 0;
+  }
+  .container > div {
+    width: 100%;
+  }
+  span {
+    font-size: 1.4rem;
+  }
+}
+
+.form.disable {
+  opacity: 0.4;
+  position: relative;
+}
+
+.form.disable::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

@@ -1,0 +1,7 @@
+.container {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+.card-table {
+  min-width: 120rem;
+}
